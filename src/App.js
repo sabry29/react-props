@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import  Profile from './profile/Profile'
 
 function App() {
+  const users = [
+    {
+      name :"Nadim",
+      age :"20",
+      email :"@gmail.com"
+    },
+    {
+      name : "sabry",
+      age :"29",
+      email :"@gmail.fr"
+    }
+  ]
+  const handelName = (name) => {
+    alert(`hello ${name} `)
+
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {users.map(ele=>{
+        return(<Profile props={ele} func={handelName} />)
+
+        
+
+      })}
+     
     </div>
   );
 }
